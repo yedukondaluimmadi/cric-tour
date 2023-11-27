@@ -1,8 +1,8 @@
 package Cricket.Cric.tour.controller;
 
 
+import Cricket.Cric.tour.model.CricTourRegisterModel;
 import Cricket.Cric.tour.service.CricTourService;
-import Cricket.Cric.tour.model.TeamInfoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,9 +17,9 @@ public class CricTourController {
     public CricTourService cricTourService;
 
     @PostMapping("/register")
-    public String registerTeam(@RequestBody TeamInfoRequest teamInfoRequest) {
+    public String registerTeam(@RequestBody CricTourRegisterModel cricTourRegisterModel) {
 
-        return cricTourService.registerTeam(teamInfoRequest);
+        return cricTourService.registerTeam(cricTourRegisterModel);
     }
 
 }

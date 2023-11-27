@@ -4,20 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class TeamInfoRequest {
-
-    private String name;
-
+@NoArgsConstructor
+public class CricTourRegisterModel {
     private String teamName;
-
     private String dist;
+    List<TeamMembers> teamMembers;
 
-    private Integer aadhar;
-
-    private Boolean isCaptain;
-
-    private Boolean isViceCaptain;
 }
