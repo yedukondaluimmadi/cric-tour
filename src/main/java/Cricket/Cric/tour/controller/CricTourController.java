@@ -18,7 +18,7 @@ public class CricTourController {
 
         return cricTourService.registerTeam(cricTourRegisterModel);
     }
-    @GetMapping("/hello")
+    @GetMapping("/health")
     public String health(){
         return "health checkUp is UP";
     }
