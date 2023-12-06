@@ -11,7 +11,7 @@ public class TeamMembers {
 
     private String name;
 
-    private Integer aadhar;
+    private String aadhar;
 
     private Boolean isCaptain;
 

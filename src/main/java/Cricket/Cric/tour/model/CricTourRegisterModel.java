@@ -12,6 +12,6 @@ import java.util.List;
 public class CricTourRegisterModel {
     private String teamName;
     private String dist;
-    List<TeamMembers> teamMembers;
+    private List<TeamMembers> teamMembers;
 
 }
