@@ -20,7 +20,7 @@ public class CricTourController {
     }
     @GetMapping("/health")
     public String health(){
-        return "health checkUp is UP";
+        return "health is UP";
     }
 
 }
