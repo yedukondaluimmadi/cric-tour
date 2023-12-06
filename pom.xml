@@ -11,7 +11,7 @@
 	<groupId>Cricket</groupId>
 	<artifactId>Cric-tour</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>Cric-tour</name>
 	<description> Team info</description>
 	<properties>

@@ -8,7 +8,7 @@ public class CricTourService {
 
     public String registerTeam(CricTourRegisterModel cricTourRegisterModel){
 
-        return "Succssfully created "+ cricTourRegisterModel.getTeamName()+ " Team";
+        return "Successfully Registered "+ cricTourRegisterModel.getTeamName()+ " Team";
     }
 
 }
