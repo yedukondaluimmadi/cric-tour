@@ -1,6 +1,5 @@
 package Cricket.Cric.tour.controller;
 
-
 import Cricket.Cric.tour.model.CricTourRegisterModel;
 import Cricket.Cric.tour.service.CricTourService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +17,17 @@ public class CricTourController {
 
         return cricTourService.registerTeam(cricTourRegisterModel);
     }
+
     @GetMapping("/health")
     public String health(){
         return "health is UP";
     }
 
+    @PutMapping("/{teamId}/update")
+    public CricTourRegisterModel updateTeamDetails(
+            @PathVariable String teamId,
+            @RequestBody CricTourRegisterModel updatedTeam
+    ) {
+        return cricTourService.updateTeamDetails(teamId, updatedTeam);
+    }
 }
