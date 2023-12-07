@@ -1,4 +1,4 @@
-package Cricket.Cric.tour.model;
+package com.cricket.cric.tour.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ public class TeamMembers {
 
     private String name;
 
-    private Integer aadhar;
+    private String aadhar;
 
     private Boolean isCaptain;
 

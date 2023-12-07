@@ -1,4 +1,4 @@
-package Cricket.Cric.tour;
+package com.cricket.cric.tour;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

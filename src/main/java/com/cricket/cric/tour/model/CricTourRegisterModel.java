@@ -1,4 +1,4 @@
-package Cricket.Cric.tour.model;
+package com.cricket.cric.tour.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +12,6 @@ import java.util.List;
 public class CricTourRegisterModel {
     private String teamName;
     private String dist;
-    List<TeamMembers> teamMembers;
+   private List<TeamMembers> teamMembers;
 
 }

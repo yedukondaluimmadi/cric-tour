@@ -1,6 +1,7 @@
-package Cricket.Cric.tour.service;
+package com.cricket.cric.tour.service;
 
-import Cricket.Cric.tour.model.CricTourRegisterModel;
+import com.cricket.cric.tour.model.CricTourRegisterModel;
+import com.cricket.cric.tour.model.ScoreLive;
 import org.springframework.stereotype.Service;
 
 @Service
