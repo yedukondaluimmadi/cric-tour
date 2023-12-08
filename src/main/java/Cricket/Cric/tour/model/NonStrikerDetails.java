@@ -7,13 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeamMembers {
-
-    private String name;
-
-    private String  aadhar;
-
-    private Boolean isCaptain;
-
-    private Boolean isViceCaptain;
+public class NonStrikerDetails {
+    private String striker;
+    private int balls;
+    private int runs;
+    private int fours;
+    private int sixes;
 }

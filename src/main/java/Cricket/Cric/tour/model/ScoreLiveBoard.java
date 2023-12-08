@@ -7,13 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TeamMembers {
+public class ScoreLiveBoard {
+    private int id;
+    private StrikerDetails striker;
+    private NonStrikerDetails nonStriker;
+    private BowlerDetails bowler;
 
-    private String name;
-
-    private String  aadhar;
-
-    private Boolean isCaptain;
-
-    private Boolean isViceCaptain;
 }
