@@ -18,17 +18,4 @@ public class ScoreRunsService {
 
 
     }
-    public BowlerDetails convertBowlerDetails(int id, String name, int overs, int balls, int runs) {
-        BowlerDetails bowlerDetails = new BowlerDetails();
-        bowlerDetails.setId(id);
-        bowlerDetails.setName(name);
-        bowlerDetails.setBallNumber(balls);
-        bowlerDetails.setOverNumber(overs);
-        bowlerDetails.setScore(runs);
-
-        return bowlerDetails;
-    }
-
-
-
 }
