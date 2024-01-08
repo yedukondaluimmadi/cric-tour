@@ -63,34 +63,9 @@ public class CricTourController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UmpireDetails> getUmpireDetails(@PathVariable String id) {
+    public ResponseEntity<UmpireDetails> getUmpireDetails(@PathVariable String id){
 
-
-
-
-        List<String> apDists = new ArrayList<>();
-        apDists.add("GUNTUR");
-        apDists.add("VIZAG");
-        apDists.add("PALNADU");
-
-        State apState = new State();
-        apState.setDist(apDists);
-        apState.setLocation("location");
-
-        List<String> tlDists = new ArrayList<>();
-        tlDists.add("HYD");
-        tlDists.add("WAR");
-        tlDists.add("NAL");
-
-
-
-        HashMap<String, List<String>> statesHAshMAp = new HashMap<String, List<String>>();
-        statesHAshMAp.put("AP",apDists);
-        statesHAshMAp.put("TS",tlDists);
-        System.out.println(statesHAshMAp.get("AP"));
-
-
-        return null;
+        return new ResponseEntity<>(umpireService.getUmpireDetailsById(id), HttpStatus.OK);
     }
 
 
