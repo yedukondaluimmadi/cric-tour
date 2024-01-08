@@ -19,7 +19,7 @@ public class QuizController {
         return quizService.addQuiz(quiz);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/All")
     public List<QuizDetails> getAllQuizzes() {
         return quizService.getAllQuizzes();
     }
