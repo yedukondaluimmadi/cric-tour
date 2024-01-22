@@ -16,12 +16,8 @@ public class QuizService {
     }
 
     public List<QuizDetails> getAllQuizzes() {
-
-        // Shuffle the list using Collections.shuffle and a random seed
         long seed = System.nanoTime();
         Collections.shuffle(quizList, new Random(seed));
-
-        // Return the first 10 questions (or fewer if there are less than 10 questions)
         return quizList.subList(0, Math.min(10, quizList.size()));
     }
 

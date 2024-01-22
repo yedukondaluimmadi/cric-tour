@@ -15,12 +15,12 @@ public class QuizController {
     private QuizService quizService;
     @PostMapping("/add")
     public QuizDetails addQuiz(@RequestBody QuizDetails quiz) {
-
         return quizService.addQuiz(quiz);
     }
 
-    @GetMapping("/All")
+    @GetMapping("/all")
     public List<QuizDetails> getAllQuizzes() {
         return quizService.getAllQuizzes();
+
     }
 }

@@ -13,5 +13,6 @@ public class ScheduleTeamModel {
     private int gameId;
     private String location;
     private String dist;
+    private String date;
     private List<ElevenTeamModel> team;
 }

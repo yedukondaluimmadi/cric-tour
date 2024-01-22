@@ -3,14 +3,11 @@ package Cricket.Cric.tour.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExtraModel {
-    private int total;
-    private int wide;
-    private int noBall;
-
-
+public class ScoreboardModel {
+    private int teamAScore;
+    private int teamBScore;
 }

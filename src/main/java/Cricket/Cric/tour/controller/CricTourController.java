@@ -30,7 +30,6 @@ public class CricTourController {
 
     @PostMapping("/register")
     public String registerTeam(@RequestBody CricTourRegisterModel cricTourRegisterModel) {
-
         return cricTourService.registerTeam(cricTourRegisterModel);
     }
     @GetMapping("/health")
@@ -48,11 +47,7 @@ public class CricTourController {
         TeamsLiveModel teamsLiveModels = liveTeamsService.getTeamsLiveModel();
         return new ResponseEntity<>(teamsLiveModels, HttpStatus.OK);
     }
-    /*@PostMapping("/Quiz")
-    public ResponseEntity<QuizModel> createQuiz(@RequestBody QuizModel quiz) {
-        QuizModel createdQuiz = quizService.createQuiz(quiz);
-        return new ResponseEntity<>(createdQuiz, HttpStatus.CREATED);
-    }*/
+
     @PostMapping("/umpire/create")
     public ResponseEntity<String> registerUmpire(@RequestBody UmpireDetails umpireDetails) {
         String registrationMessage = umpireService.registerUmpire(umpireDetails);
@@ -61,9 +56,6 @@ public class CricTourController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UmpireDetails> getUmpireDetails(@PathVariable String id){
-
         return new ResponseEntity<>(umpireService.getUmpireDetailsById(id), HttpStatus.OK);
     }
-
-
 }
