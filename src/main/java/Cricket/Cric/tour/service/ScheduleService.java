@@ -22,7 +22,6 @@ public class ScheduleService {
     public List<ScheduleTeamModel> getSchedules() {
         return new ArrayList<>(this.scheduleTeamModelMap.values());
     }
-
     public ScheduleTeamModel getScheduleByGameId(int gameId) {
         return this.scheduleTeamModelMap.isEmpty() ? null : (ScheduleTeamModel)this.scheduleTeamModelMap.get(gameId);
     }
