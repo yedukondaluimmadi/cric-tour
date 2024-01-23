@@ -6,7 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -42,6 +44,10 @@ public class RegistrationService {
                 registrationDetails.getEmail() == null || registrationDetails.getEmail().isEmpty() ||
                 registrationDetails.getCourse() == null || registrationDetails.getCourse().isEmpty() ||
                 registrationDetails.getMobile() == null || registrationDetails.getMobile().isEmpty();
+    }
+
+    public List<RegistrationModel> getAllRegisteredUsers() {
+        return new ArrayList<>(registration.values());
     }
 }
 
