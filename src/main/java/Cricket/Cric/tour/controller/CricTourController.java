@@ -39,7 +39,7 @@ public class CricTourController {
     }
 
     @PostMapping("/game/start/{id}")
-    public ResponseEntity<String> startGame(@PathVariable("id") int id, @RequestBody GameStartModel gameStartModel) {
+    public ResponseEntity<String> startGame(@PathVariable("id") @RequestBody GameStartModel gameStartModel) {
         String result = gameService.startGame(gameStartModel);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
