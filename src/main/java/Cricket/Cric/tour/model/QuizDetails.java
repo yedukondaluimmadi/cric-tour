@@ -11,4 +11,5 @@ public class QuizDetails {
     private String question;
     private String answer;
     private String id;
+    private String testStack;
 }

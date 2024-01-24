@@ -1,28 +1,28 @@
 package Cricket.Cric.tour.service;
 import Cricket.Cric.tour.model.QuizDetails;
+import Cricket.Cric.tour.model.SubmitAnswersModel;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class QuizService {
+
+    private final List<SubmitAnswersModel> submittedAnswers = new ArrayList<>();
     private final List<QuizDetails> quizList = new ArrayList<>(); // For demo purposes (data storage)
     public QuizDetails addQuiz(QuizDetails quiz) {
         quizList.add(quiz);
         return quiz;
     }
-
     public List<QuizDetails> getAllQuizzes() {
-
-        // Shuffle the list using Collections.shuffle and a random seed
         long seed = System.nanoTime();
         Collections.shuffle(quizList, new Random(seed));
-
-        // Return the first 10 questions (or fewer if there are less than 10 questions)
         return quizList.subList(0, Math.min(10, quizList.size()));
     }
-
+    public List<QuizDetails> getTestStack(String testStack) {
+        return quizList.stream()
+                .filter(quiz -> testStack.equals(quiz.getTestStack()))
+                .collect(Collectors.toList());
+    }
 }

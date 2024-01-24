@@ -5,7 +5,6 @@ import Cricket.Cric.tour.model.RegistrationModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,10 +44,26 @@ public class RegistrationService {
                 registrationDetails.getCourse() == null || registrationDetails.getCourse().isEmpty() ||
                 registrationDetails.getMobile() == null || registrationDetails.getMobile().isEmpty();
     }
-
     public List<RegistrationModel> getAllRegisteredUsers() {
         return new ArrayList<>(registration.values());
     }
+    public boolean deleteUserByMobile(String mobile) {
+        if (isValidMobileNumber(mobile)) {
+            RegistrationModel deletedUser = registration.remove(mobile);
+            return deletedUser != null;  // Returns true if the user was found and deleted
+        } else {
+            return false;  // Invalid mobile number
+        }
+    }
+
+    private boolean isValidMobileNumber(String mobile) {
+        // Add your mobile number validation logic here
+        // For simplicity, assuming a valid mobile number is not null and not empty
+        return mobile != null && !mobile.trim().isEmpty();
+    }
+
+
 }
+
 
 
