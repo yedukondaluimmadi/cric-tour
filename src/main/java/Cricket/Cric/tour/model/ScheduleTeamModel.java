@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ScheduleTeamModel {
-    private int gameId;
+    private Integer gameId;
     private String location;
     private String dist;
     private List<ElevenTeamModel> team;

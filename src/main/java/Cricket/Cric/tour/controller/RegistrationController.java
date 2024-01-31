@@ -34,4 +34,16 @@ public class RegistrationController {
             return new ResponseEntity<>("No registered users found.", HttpStatus.NOT_FOUND);
         }
     }
+    @DeleteMapping("/delete/{mobile}")
+    public String deleteUserByMobile(@PathVariable String mobile) {
+        boolean isDeleted = registrationService.deleteUserByMobile(mobile);
+
+        if (isDeleted) {
+            return "User with mobile number " + mobile + " deleted successfully.";
+        } else {
+            return "User with mobile number " + mobile + " not found.";
+        }
+    }
+
+
 }

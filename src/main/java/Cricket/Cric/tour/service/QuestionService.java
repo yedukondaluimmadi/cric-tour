@@ -14,9 +14,7 @@ import java.util.stream.Collectors;
 public class QuestionService {
     private final List<SubmitAnswersModel> submittedAnswers = new ArrayList<>();
 
-
     public List<SubmitAnswersModel> submitAnswers(SubmitAnswersModel submitAnswersModel) {
-
         submittedAnswers.add(submitAnswersModel);
         return submittedAnswers; // Return the list of submitted answers
     }
@@ -26,13 +24,11 @@ public class QuestionService {
         if( !ObjectUtils.isEmpty(submittedAnswers)){
            List<SubmitAnswersModel> candidateAnswers =  submittedAnswers.stream().filter(submitAnswersModel -> candidateId == submitAnswersModel.getCandidateId()).collect(Collectors.toList());
            return ObjectUtils.isEmpty(candidateAnswers) ? null : candidateAnswers.get(0);
-
         }
         return null;
     }
 
     public String deleteAnswersBySecurityId(int securityId) {
-
         if(securityId == 6565){
             submittedAnswers.clear();
             return "Submitted Successfully";

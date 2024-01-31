@@ -18,8 +18,4 @@ public class UmpireDetails {
     private String pan;
     private String emailAddress;
 
-    // Constructors, getters, and setters go here...
-
-    // Assume you have appropriate constructors and methods for the UmpireDetails class
-
 }
