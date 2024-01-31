@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ElevenTeamModel {
-    private  int teamId;
+    private  Integer teamId;
     private  String teamName;
     private  String dist;
     private  String captainName;

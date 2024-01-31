@@ -57,8 +57,6 @@ public class RegistrationService {
     }
 
     private boolean isValidMobileNumber(String mobile) {
-        // Add your mobile number validation logic here
-        // For simplicity, assuming a valid mobile number is not null and not empty
         return mobile != null && !mobile.trim().isEmpty();
     }
 
