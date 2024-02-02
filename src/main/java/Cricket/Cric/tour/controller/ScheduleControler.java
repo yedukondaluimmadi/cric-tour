@@ -25,7 +25,6 @@ public class ScheduleControler {
     @PostMapping
     public ResponseEntity<?> createSchedule(@RequestBody ScheduleTeamModel team) {
         List<String> validationErrors = validationSchedule.validateTeam(team);
-
         if (!validationErrors.isEmpty()) {
             // If validation errors exist, return a bad request response with the error messages
             return ResponseEntity.badRequest().body(validationErrors);
@@ -37,7 +36,6 @@ public class ScheduleControler {
     public ResponseEntity<List<ScheduleTeamModel>> getSchedules() {
         return new ResponseEntity<>(this.scheduleService.getSchedules(), HttpStatus.OK);
     }
-
     @GetMapping({"/{gameId}"})
     public ResponseEntity<ScheduleTeamModel> getSchedulesByGameId(@PathVariable int gameId) {
         return new ResponseEntity<>(this.scheduleService.getScheduleByGameId(gameId), HttpStatus.OK);
