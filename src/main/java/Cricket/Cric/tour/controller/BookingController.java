@@ -16,7 +16,7 @@ public class BookingController {
     private BookingService bookingService;
 
     @PostMapping("/bookings")
-    public Booking bookTimeSlots(@RequestBody Booking booking) {
+    public Booking bookTimeSlots(@RequestBody Booking booking) throws Exception {
         return bookingService.bookTimeSlots(booking);
     }
     @GetMapping("/bookings")
