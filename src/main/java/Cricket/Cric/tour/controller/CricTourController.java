@@ -61,7 +61,6 @@ public class CricTourController {
 
     @GetMapping("/{id}")
     public ResponseEntity<UmpireDetails> getUmpireDetails(@PathVariable String id){
-
         return new ResponseEntity<>(umpireService.getUmpireDetailsById(id), HttpStatus.OK);
     }
 
