@@ -1,6 +1,8 @@
 package Cricket.Cric.tour.service;
 
+import Cricket.Cric.tour.BookingRepository;
 import Cricket.Cric.tour.model.Booking;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,11 +13,15 @@ import java.util.Random;
 @Service
 public class BookingService {
 
+    private final BookingRepository bookingRepository;
+    @Autowired
+    public BookingService(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
+
     HashMap<String, Booking> bookingSlots = new HashMap<>();
 
-    HashMap<String, Booking> pastBookingSlots = new HashMap<>();
-
-    public Booking bookTimeSlots(Booking booking) {
+    public Booking bookTimeSlots(Booking booking) throws Exception {
 
         Random random = new Random();
         int number1 = random.nextInt(100);
@@ -23,12 +29,20 @@ public class BookingService {
         String id = String.format("%d%d", number1, number2);
         booking.setId(id);
         bookingSlots.put(id,booking);
-        pastBookingSlots.put(id,booking);
+
+        bookingRepository.createSchedule(booking);
         return booking;
     }
 
     public List<Booking> getBookingSlots() {
-        return new ArrayList<>(bookingSlots.values());
+
+        if(bookingSlots.isEmpty()){
+            List<Booking> bookings =  bookingRepository.queryBookings();
+            for (Booking booking : bookings) {
+                bookingSlots.put(booking.getId(), booking);
+            }
+        }
+         return new ArrayList<>(bookingSlots.values());
     }
 
     public void deleteBooking(String bookingId) {
@@ -36,6 +50,6 @@ public class BookingService {
     }
 
     public List<Booking> getPastBookingSlots() {
-        return new ArrayList<>(pastBookingSlots.values());
+        return new ArrayList<>(bookingSlots.values());
     }
 }
