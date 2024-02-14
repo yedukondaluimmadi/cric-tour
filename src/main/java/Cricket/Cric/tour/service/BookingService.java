@@ -46,7 +46,11 @@ public class BookingService {
     }
 
     public void deleteBooking(String bookingId) {
-        bookingSlots.remove(bookingId);
+
+        int statusCode = bookingRepository.deleteBookings(bookingId);
+        if(statusCode == 200){
+            bookingSlots.remove(bookingId);
+        }
     }
 
     public List<Booking> getPastBookingSlots() {
